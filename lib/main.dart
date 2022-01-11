@@ -56,14 +56,13 @@ class _State extends State<MyApp> {
           children: <Widget>[
             // ignore: prefer_const_constructors
             new Text(_value),
-            // ignore: deprecated_member_use, prefer_const_constructors
-            new RaisedButton(
+            new ElevatedButton(
               onPressed: () => _onPressed('Yes'),
               // ignore: prefer_const_constructors
               child: new Text('Click here'),
             ),
             new Text(_flatValue),
-            new FlatButton(
+            new TextButton(
               onPressed: _onPressedFlatButton,
               // ignore: prefer_const_constructors
               child: new Text('Click here'),
