@@ -14,7 +14,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _State extends State<MyApp> {
-  String _value = 'Hello World A';
+  String _value = 'Hello Raised Button';
+  String _flatValue = 'Hello FlatButton';
+  int _numValue = 0;
 
   void _onPressed(String value) {
     setState(() {
@@ -25,7 +27,19 @@ class _State extends State<MyApp> {
 
   void _onPressedFlatButton() {
     setState(() {
-      _value = new DateTime.now().toString();
+      _flatValue = new DateTime.now().toString();
+    });
+  }
+
+  void _add() {
+    setState(() {
+      _numValue++;
+    });
+  }
+
+  void _subtract() {
+    setState(() {
+      _numValue--;
     });
   }
 
@@ -48,11 +62,15 @@ class _State extends State<MyApp> {
               // ignore: prefer_const_constructors
               child: new Text('Click here'),
             ),
+            new Text(_flatValue),
             new FlatButton(
               onPressed: _onPressedFlatButton,
               // ignore: prefer_const_constructors
               child: new Text('Click here'),
-            )
+            ),
+            new Text('value = $_numValue'),
+            new IconButton(onPressed: _add, icon: const Icon(Icons.add)),
+            new IconButton(onPressed: _subtract, icon: const Icon(Icons.remove))
           ],
         ),
       ),
