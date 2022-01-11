@@ -16,9 +16,16 @@ class MyApp extends StatefulWidget {
 class _State extends State<MyApp> {
   String _value = 'Hello World A';
 
-  void _onPressed() {
+  void _onPressed(String value) {
     setState(() {
-      _value = 'My name is Ayo';
+      _value = value;
+      // 'My name is Ayo';
+    });
+  }
+
+  void _onPressedFlatButton() {
+    setState(() {
+      _value = new DateTime.now().toString();
     });
   }
 
@@ -37,7 +44,12 @@ class _State extends State<MyApp> {
             new Text(_value),
             // ignore: deprecated_member_use, prefer_const_constructors
             new RaisedButton(
-              onPressed: _onPressed,
+              onPressed: () => _onPressed('Yes'),
+              // ignore: prefer_const_constructors
+              child: new Text('Click here'),
+            ),
+            new FlatButton(
+              onPressed: _onPressedFlatButton,
               // ignore: prefer_const_constructors
               child: new Text('Click here'),
             )
