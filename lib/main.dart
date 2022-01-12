@@ -47,8 +47,7 @@ class _State extends State<MyApp> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        // ignore: prefer_const_constructors
-        title: new Text('My Title'),
+        title: const Text('My Flutter Challenge App'),
       ),
       body: new Container(
         padding: const EdgeInsets.all(32.0),
